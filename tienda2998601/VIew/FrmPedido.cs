@@ -183,8 +183,11 @@ namespace tienda2998601.VIew
 
                 controllerDetallesPedidos.AgregarDetalles(detalle);
                 totalPedido += p.Subtotal;
+
                 //falta actualizar el stock de productos!!!!!!!!
                 //hacerlo en el controlador de productos
+                
+                controllerProductos.actualizarStock(p.ProductoId, p.Cantidad);
             }
             //actualizar el total del pedido
             pedido.TotalPedido = totalPedido;

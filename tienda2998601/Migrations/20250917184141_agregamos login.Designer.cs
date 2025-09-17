@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using tienda2998601.Model;
 
 namespace tienda2998601.Migrations
 {
     [DbContext(typeof(Tienda2998601Context))]
-    partial class Tienda2998601ContextModelSnapshot : ModelSnapshot
+    [Migration("20250917184141_agregamos login")]
+    partial class agregamoslogin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

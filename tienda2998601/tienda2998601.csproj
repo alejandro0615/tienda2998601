@@ -166,7 +166,13 @@
     <Compile Include="Controller\ControllerDetallesPedido.cs" />
     <Compile Include="Controller\ControllerPedidos.cs" />
     <Compile Include="Controller\ControllerProductos.cs" />
+    <Compile Include="Controller\ControllerUsuarios.cs" />
+    <Compile Include="Migrations\20250917184141_agregamos login.cs" />
+    <Compile Include="Migrations\20250917184141_agregamos login.Designer.cs">
+      <DependentUpon>20250917184141_agregamos login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ProductoSeleccionado.cs" />
+    <Compile Include="Model\Usuario.cs" />
     <Compile Include="VIew\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,12 @@
     </Compile>
     <Compile Include="VIew\FrmClientes.Designer.cs">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIew\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIew\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="VIew\FrmPedido.cs">
       <SubType>Form</SubType>
@@ -217,6 +229,9 @@
     </Compile>
     <EmbeddedResource Include="VIew\FrmClientes.resx">
       <DependentUpon>FrmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIew\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIew\FrmPedido.resx">
       <DependentUpon>FrmPedido.cs</DependentUpon>

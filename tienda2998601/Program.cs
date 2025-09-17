@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using tienda2998601.VIew;
 
 namespace tienda2998601
 {
@@ -16,7 +17,8 @@ namespace tienda2998601
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+            Application.Run(new FrmLogin());
         }
     }
 }

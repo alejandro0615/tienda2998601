@@ -94,6 +94,57 @@ namespace tienda2998601.Controller
             return "El Producto no ha sido registrado";
         }
 
+        public string actualizarStock(int productoId, int cantidadVendida)
+        {
+            var producto = _context.Productos.Find(productoId);
+            if (producto == null)
+            {
+                return "producto no encontrado";
+            }
+            if (producto.Stock < cantidadVendida)
+            {
+                return $"stock insuficiente para el producto'{producto.NombreProducto}' " +
+                    $"stock actual '{producto.Stock}' cantidad solicitada '{cantidadVendida}'";
+            }
+            try
+            {
+                producto.Stock -= cantidadVendida;
+                _context.SaveChanges();
+                return $"Stock actualizado con exito, cantidad restante: '{producto.Stock}'";
+            }
+            catch (SqlException ex)
+            {
+
+                return $"Error en la base de datos: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                return $"Ocurrio un error inesperado: {ex.Message}";
+            }
+        }
+        public string agregarStock(int productoId, int cantidadVendida)
+        {
+            var producto = _context.Productos.Find(productoId);
+            if (producto != null)
+            {
+                return "producto no encontrado";
+            }
+            try
+            {
+                producto.Stock += cantidadVendida;
+                _context.SaveChanges();
+                return $"Stock actualizado con exito, cantidad en el momento: '{producto.Stock}'";
+            }
+            catch (SqlException ex)
+            {
+
+                return $"Error en la base de datos: {ex.Message}";
+            }
+            catch (Exception ex)
+            {
+                return $"Ocurrio un error inesperado: {ex.Message}";
+            }
+        }
 
     }
 }

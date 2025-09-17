@@ -13,6 +13,7 @@ namespace tienda2998601.Model
         public DbSet<DetallePedido> DetallePedidos { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -20,6 +21,7 @@ namespace tienda2998601.Model
                 //un indice (HasIndex) es una restriccion en base de datos
                 .HasIndex(c => c.CorreoElectronico)
                 .IsUnique();
+            
             modelBuilder.Entity<Cliente>()
                 //un indice (HasIndex) es una restriccion en base de datos
                 .HasIndex(c => c.Documento)
